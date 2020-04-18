@@ -48,4 +48,8 @@ loadMoreButton.addEventListener(`click`, () => {
 
   tasks.slice(prevTasksCount, showingTasksCount)
     .forEach((task) => render(taskListElement, createTaskTemplate(task), `beforeend`));
+
+  if (showingTasksCount >= tasks.length) {
+    loadMoreButton.remove();
+  }
 });
