@@ -62,7 +62,6 @@ const renderBoard = (boardComponent, tasks) => {
       loadMoreButtonComponent.removeElement();
     }
   });
-
 };
 
 const siteMainElement = document.querySelector(`.main`);
@@ -73,3 +72,7 @@ const tasks = generateTasks(TASK_COUNT);
 
 render(siteHeaderElement, new SiteMenuComponent().getElement(), RenderPosition.BEFOREEND);
 render(siteMainElement, new FilterComponent(filters).getElement(), RenderPosition.BEFOREEND);
+
+const boardComponent = new BoardComponent();
+render(siteMainElement, boardComponent.getElement(), RenderPosition.BEFOREEND);
+renderBoard(boardComponent, tasks);
