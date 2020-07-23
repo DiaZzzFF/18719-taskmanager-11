@@ -9,7 +9,6 @@ import {render, RenderPosition} from "./utils/render.js";
 
 const TASK_COUNT = 22;
 
-
 const siteMainElement = document.querySelector(`.main`);
 const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 
