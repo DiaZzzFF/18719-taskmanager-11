@@ -5,7 +5,7 @@ import {formatTime} from "../utils/common.js";
 
 const createButtonMarkup = (name, isActive = true) => {
   return (
-    `<button>
+    `<button
       type="button"
       class="card__btn card__btn--${name} ${isActive ? `` : `card__btn--disabled`}"
     >
