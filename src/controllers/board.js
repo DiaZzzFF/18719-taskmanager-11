@@ -12,7 +12,7 @@ const SHOWING_TASKS_COUNT_BY_BUTTON = 8;
 const renderTasks = (taskListElement, tasks, onDataChange, onViewChange) => {
   return tasks.map((task) => {
     const taskController = new TaskController(taskListElement, onDataChange, onViewChange);
-    taskController.render(task);
+    taskController.render(task, TaskControllerMode.DEFAULT);
 
     return taskController;
   });
@@ -111,10 +111,6 @@ export default class BoardController {
   }
 
   _onDataChange(taskController, oldData, newData) {
-
-
-
-
     if (oldData === EmptyTask) {
       this._creatingTask = null;
 
