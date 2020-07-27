@@ -1,4 +1,4 @@
-import {getTasksByFilter, getTasksInOneDay} from "../utils/filter.js";
+import {getTasksByFilter} from "../utils/filter.js";
 import {FilterType} from "../const.js";
 
 
@@ -41,6 +41,10 @@ export default class Tasks {
     this._callHandlers(this._dataChangeHandlers);
 
     return true;
+  }
+
+  setFilterChangeHandler(handler) {
+    this._filterChangeHandlers.push(handler);
   }
 
   setDataChangeHandler(handler) {
