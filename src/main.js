@@ -7,6 +7,7 @@ import StatisticsComponent from "./components/statistics.js";
 import TasksModel from "./models/tasks.js";
 import {render, RenderPosition} from "./utils/render.js";
 
+const AUTHORIZATION = `Basic jdytfyjqw1grgerejr5fxft7my+`;
 
 const dateTo = new Date();
 const dateFrom = (() => {
@@ -16,7 +17,7 @@ const dateFrom = (() => {
   return d;
 })();
 
-const api = new API();
+const api = new API(AUTHORIZATION);
 const tasksModel = new TasksModel();
 
 const siteMainElement = document.querySelector(`.main`);
