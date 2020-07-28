@@ -153,7 +153,7 @@ export default class BoardController {
       }
 
     } else if (newData === null) {
-      this._tasksModel._removeTask(oldData.id);
+      this._tasksModel.removeTask(oldData.id);
       this._updateTasks(this._showingTasksCount);
 
     } else {
