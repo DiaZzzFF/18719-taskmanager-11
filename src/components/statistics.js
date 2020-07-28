@@ -286,11 +286,11 @@ export default class Statistics extends AbstractSmartComponent {
   }
 
   _applyFlatpickr(element) {
-    if (this._flapickr) {
-      this._applyFlatpickr.destroy();
+    if (this._flatpickr) {
+      this._flatpickr.destroy();
     }
 
-    this._flapickr = flatpickr(element, {
+    this._flatpickr = flatpickr(element, {
       altInput: true,
       allowInput: true,
       defaultDate: [this._dateFrom, this._dateTo],
