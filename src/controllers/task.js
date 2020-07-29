@@ -5,6 +5,8 @@ import {render, replace, remove, RenderPosition} from "../utils/render.js";
 import {Color, DAYS} from "../const.js";
 
 
+const SNAKE_ANIMATION_TIMEOUT = 600;
+
 export const Mode = {
   ADDING: `adding`,
   DEFAULT: `default`,
@@ -134,6 +136,16 @@ export default class TaskController {
     remove(this._taskEditComponent);
     remove(this._taskComponent);
     document.removeEventListener(`keydown`, this._onEscKeyDown);
+  }
+
+  snake() {
+    this._taskEditComponent.getElement().style.animation = `snake ${SNAKE_ANIMATION_TIMEOUT / 1000}s`;
+    this._taskComponent.getElement().style.animation = `snake ${SNAKE_ANIMATION_TIMEOUT / 1000}s`;
+
+    setTimeout(() => {
+      this._taskEditComponent.getElement().style.animation = ``;
+      this._taskComponent.getElement().style.animation = ``;
+    }, SNAKE_ANIMATION_TIMEOUT);
   }
 
   _replaceEditToTask() {
